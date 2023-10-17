@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+:root{
+    --orange: #d63a25;
+    --white: #fff;
+    --dark: #1e1c2a;
+}
+
+body{
+    color: var(--dark);
+    background-color: var(--white);
+}
+
+
+/* MEXENDO NO HEADER DO SITE */
+
+
+.navegation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    box-shadow: 0 0.1rem 0.5rem #ccc;
+    transition: all .5s;
+    width: 100%;
+    position: fixed;
+    background-color: var(--white);
+}
+
+.logo{
+    color: var(--orange);
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.logo span{
+    color: var(--dark);
+}
+
+/* UL = .NAV-MENU */
+.nav-menu{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    list-style: none;
+}
+/* UL LI A = ISSO AQUI EMBAIXO */
+.nav-menu .nav-item{
+    color: var(--dark);
+    font-size: 1.06rem;
+    font-weight: 500;
+    transition: all .5s;
+}
+
+.nav-menu .nav-item:hover{
+    color: var(--orange);
+    font-size: 1.125rem;
+}
+.navegation .nav-menu i{
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all .5s;
+}
+.navegation .nav-menu i:hover{
+    font-size: 1.35rem;
+}
+
+.menu{
+    cursor: pointer;
+    display: none;
+}
+.menu .bar{
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: var(--dark);
+    margin: 5px auto;
+    transition: all .3s;
+}
+
+.menu .bar:nth-child(1),
+.menu .bar:nth-child(3){
+    background-color: var(--orange);
+}
+
+
+/* MEXENDO NO MAIN DO SITE!! */
+
+.home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+}
+
+.home .home-text{
+    max-width: 37rem;
+}
+.home img{
+    width: 600px;
+    height: 100%;
+}
+.home .home-text h4{
+    font-size: 1.5rem;
+    color: var(--orange);
+    margin-bottom: 1rem ;
+}
+
+.home .home-text h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 3.7rem;
+}
+
+.home .home-text p{
+    margin-bottom: 4rem;
+}
+
+.home-btn{
+    padding: 10px 40px;
+    border-radius: 15px;
+    background-color: var(--orange);
+    color: var(--white);
+    border: 1px solid var(--white);
+    transition: all .5s;
+    font-weight: 500;
+}
+
+.home-btn:hover{
+    background-color: orange;
+    color: var(--dark);
+    border: 2px solid var(--dark);
+    transform: scale(108%);
+}
+
+
+/* PARTE DA RESPONSIVIDADE */
+
+@media (max-width: 785px){
+    .navegation{
+        padding: 18px 25px;
+    }
+    .menu{
+        display: block;
+        width: 150px;
+    }
+    
+    .menu.ativo .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu.ativo .bar:nth-child(2){
+        opacity: 0;
+    }
+    .menu.ativo .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu{
+        position: fixed; 
+        right: -100%;
+        top: 70px;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--white);
+        gap: -10px;
+        transition: all .5s;
+    }
+    .nav-menu.ativo{
+        right: 0;
+        height: 100%;
+    }
+    .nav-item{
+        margin: 16px 0px;
+    }
+
+    /* MAIN */
+    .home{
+        padding: 100px 2%;
+        flex-direction: column;
+        text-align: center;
+        /* overflow: hidden; */
+        gap: 2.5rem;
+    }
+    .home img{
+        width: 80%;
+        /* height: 60%; */
+    }
+
+    .home h1{
+        font-size: 2.5rem;
+        line-height: 3rem;
+        
+    }
+    .home h4{
+        font-size: 15px;
+    }
+    
+}
